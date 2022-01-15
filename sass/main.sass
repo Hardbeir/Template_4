@@ -3,7 +3,12 @@ $black: #000
 $white: #fff
 $border: .1rem solid $black
 $box-shadow: 0 1rem 1.5rem rgba(0,0,0,.3)
+$transition: .2s linear
 
+@mixin grid($val)
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr))
+    gap: 2rem
     
 *
     font-family: 'Inter', sans-serif
@@ -254,9 +259,7 @@ section
 
 .services
     .box-container
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr))
-        gap: 2rem
+        @include grid(30rem)
         .box
             padding: 3rem 2rem
             border: $border
@@ -281,7 +284,111 @@ section
                 font-size: 1.5rem
                 line-height: 2 
 
+.projects
+    background: $black
+    .box-container
+        @include grid(30rem)
+        .box
+            overflow: hidden
+            position: relative
+            &:hover
+                img
+                    padding-bottom: 0
+                .content
+                    transform: translateY(0)  /** similar as opacity:1 **/
+                    padding: 3rem 2rem
+            img  /** stabilization images **/
+                height: 40rem
+                width: 100%
+                object-fit: cover
+                padding-bottom: 8rem
+                transition: $transition
+            .content
+                position: absolute
+                bottom: 0
+                left: 0
+                height: 100%
+                width: 100%
+                background: $white
+                text-align: center
+                padding: 1.5rem 1rem
+                text-align: center
+                transition: $transition
+                transform: translateY(calc(100% - 8.5rem)) /** similar as opacity:0 **/
+                i 
+                    height: 6rem
+                    width: 6rem
+                    line-height: 5.7rem
+                    border-radius: 50%
+                    border: $border
+                    font-size: 2rem 
+                    margin-bottom: 5rem
+                h3
+                    font-size: 2rem
+                p
+                    padding: 1rem 0
+                    font-size: 1.5rem
+                    line-height: 2 
 
+
+.contact
+    background: linear-gradient($black 50%, $yellow 50.1%)
+    form
+        max-width: 70rem
+        margin: 0 auto
+        background-color: $white
+        border: $border
+        padding: 2rem
+        .box
+            width: 100%
+            margin: .7rem 0
+            padding: 1.2rem 1.4rem
+            text-transform: none
+            font-size: 2rem
+            border: $border
+            &:focus
+                background-color: $black
+                color: $white
+                &::placeholder
+                    color: $white
+            &::placeholder
+                color: $black
+                text-transform: capitalize
+        textarea
+            height: 20rem
+            resize: none
+.footer
+    text-align: center
+    .share
+        margin-bottom: 3rem
+        a
+            height: 7rem
+            width: 7rem
+            line-height: 6.7rem
+            font-size: 3rem
+            background-color: $white
+            border: $border
+            color: $black
+            margin: 0 .3rem
+            &:hover
+                background-color: $black
+                color: $white
+    .link
+        margin: 2rem 0
+        display: flex
+        justify-content: center
+        gap: 1rem
+        flex-wrap: wrap
+        .btn
+            margin: 0
+    .credit
+        font-size: 2rem
+        margin-top: 3 rem
+        line-height: 2
+        span
+            background-color: $white
+            border: $border
+            padding: .5rem 1.5rem
 
 
 /** media querie **/
