@@ -1,0 +1,202 @@
+$yellow: #feed01
+$black: #000
+$white: #fff
+$border: .1rem solid $black
+$box-shadow: 0 1rem 1.5rem rgba(0,0,0,.3)
+
+    
+*
+    font-family: 'Inter', sans-serif
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
+    border: none
+    text-decoration: none
+    text-transform: capitalize
+    cursor: none
+    &:active > .cursor
+        transform: translateX(-40%) rotate(-45deg)        
+
+html
+    font-size: 62.5%
+    overflow-x: hidden
+    scroll-padding-top: 7rem
+    &::-webkit-scrollbar
+        width: 1rem
+    &::-webkit-scrollbar-track
+        background: $yellow
+    &::-webkit-scrollbar-track
+        background: $black
+
+body
+    background: $yellow
+    overflow-x: hidden
+
+section
+    padding: 3rem 5%
+
+.cursor
+    position: absolute
+    height: 8rem
+    pointer-events: none
+    top: -5rem
+    left: -5rem
+    transform: translateX(-40%)
+    z-index: 10000
+
+.header
+    padding: 1.5rem 10%
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 1000
+    background: $yellow
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.header
+    .logo
+        font-size: 2.5rem
+        color: $black
+    #menu-btn
+        height: 5rem
+        width: 5rem
+        line-height: 4.7rem
+        border-radius: 50%
+        border: $border
+        background: $white
+        font-size: 1.7rem
+        text-align: center
+        &:hover
+            background: $black
+            color: $white
+.navbar
+    &-link
+        position: fixed
+        bottom: 0
+        left: -110%
+        height: calc(100% - 8rem)
+        width: 50%
+        transition:  .2s linear 
+        z-index: 1000
+        background: $black
+        padding: 0 8%
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 2.5rem
+        &.active
+            left: 0
+        a 
+            font-size: 5.5rem
+            color: $white
+            transition: .2s linear
+            text-transform: uppercase
+            &:hover
+                background: $white
+                font-size: 4rem
+                transform: scale(.9)
+                color: $black
+                padding: .5rem 2rem      
+    &-img
+        position: fixed
+        bottom: 0
+        right: -110%
+        height: calc(100% - 8rem)
+        width: 50%
+        transition:  .2s linear
+        z-index: 1000
+        &.active
+            right: 0
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+            object-position: top 
+            /** filter: grayscale() **/
+.home
+    &-title
+        margin-top: 8rem
+        position: relative
+        text-align: center
+        font-size: 6vw
+        text-transform: uppercase
+        &__text 
+            -webkit-text-stroke: .2rem $black
+            color: $white
+            position: relative
+            z-index: 10
+            &:hover
+                text-shadow: $box-shadow
+    &-img
+        position: absolute
+        top: 0
+        left: 0
+        transform: translate(-50%, -70%) scale(0)
+        transition:  .2s liner
+        pointer-events: none
+        height: 40rem
+        width: 40rem
+        object-fit: cover
+        /** dont work **/
+.home .home-titletext:hover > .home-img
+    transform: translate(-50%, -70%) scale(1)
+
+    
+
+
+
+
+
+/** media querie **/
+
+@media (max-width: 1200px)
+    .header
+        padding: 1.5rem 5%
+
+@media (max-width:991px)
+    html
+        font-size: 55%
+    section
+        padding: 3rem 2rem
+    .cursor
+        display: none
+    .header
+        padding: 1.5rem 2rem
+
+@media (max-width:768px)
+    .navbar
+        &-link
+            width: 100%
+            z-index: 1200
+            background: none 
+            a
+                background: $yellow
+                font-size: 4rem
+                transform: scale(.9)
+                color: $black 
+                border: $border
+                padding: .5rem 2rem
+        &-img
+            width: 100%
+    .home
+        &-title
+            font-size: 10vw
+        &-img
+            height: 20rem
+            width: 20rem
+            transform: translate(-50%, -100%) scale(0)
+        /** dont-work **/
+    .home .home-text:hover > .home-img
+        height: 20rem
+        width: 20rem
+        transform: translate(-50%, -100%) scale(1)
+
+
+@media (max-width:450px)
+    html
+        font-size: 50%
