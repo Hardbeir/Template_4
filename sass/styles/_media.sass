@@ -1,0 +1,61 @@
+@media (max-width: 1200px)
+    .header
+        padding: 1.5rem 5%
+    .about
+        .info-container
+            margin-top: 10rem
+            .image
+                flex: 1 1 25rem
+            .info
+                p
+                    font-size: 1.7rem
+
+@media (max-width:991px)
+    html
+        font-size: 55%
+    section
+        padding: 3rem 2rem
+    .cursor
+        display: none
+    .header
+        padding: 1.5rem 2rem
+
+@media (max-width:768px)
+    .heading
+        font-size: 10vw
+    .home h3
+        font-size: 10vw
+    .navbar
+        &-link
+            width: 100%
+            z-index: 1200
+            background: none 
+            a
+                background: $yellow
+                font-size: 4rem
+                transform: scale(.9)
+                color: $black 
+                border: $border
+                padding: .5rem 2rem
+        &-img
+            width: 100%
+    .home
+        &-title
+            font-size: 10vw
+        &-img
+            height: 20rem
+            width: 20rem
+            transform: translate(-50%, -100%) scale(0)
+        /** dont-work **/
+    .home .home-text:hover > .home-img
+        height: 20rem
+        width: 20rem
+        transform: translate(-50%, -100%) scale(1)
+    .about
+        .info-container
+            .image
+                order: -1
+
+@media (max-width:450px)
+    html
+        font-size: 50%

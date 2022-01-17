@@ -1,0 +1,83 @@
+$yellow: #feed01
+$black: #000
+$white: #fff
+$border: .1rem solid $black
+$box-shadow: 0 1rem 1.5rem rgba(0,0,0,.3)
+$transition: .2s linear
+
+@mixin grid($val)
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr))
+    gap: 2rem
+    
+*
+    font-family: 'Inter', sans-serif
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
+    border: none
+    text-decoration: none
+    text-transform: capitalize
+    cursor: none
+    &:active > .cursor
+        transform: translateX(-40%) rotate(-45deg)        
+
+html
+    font-size: 62.5%
+    overflow-x: hidden
+    scroll-padding-top: 7rem
+    &::-webkit-scrollbar
+        width: 1rem
+    &::-webkit-scrollbar-track
+        background: $yellow
+    &::-webkit-scrollbar-track
+        background: $black
+
+body
+    background: $yellow
+    overflow-x: hidden
+
+section
+    padding: 3rem 5%
+
+.cursor
+    position: absolute
+    height: 8rem
+    pointer-events: none
+    top: -5rem
+    left: -5rem
+    transform: translateX(-40%)
+    z-index: 10000
+
+.header
+    padding: 1.5rem 10%
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 1000
+    background: $yellow
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.btn
+    display: block
+    margin-top: 1rem
+    padding: 1rem 3rem
+    background: $yellow
+    border: $border
+    color: $black
+    font-size: 2rem
+    &:hover
+        background: $black
+        color: $white
+
+.heading
+    text-align: center
+    font-size: 5vw
+    text-transform: uppercase
+    color: $white
+    -webkit-text-stroke: .2rem $black
+    margin-bottom: 3rem

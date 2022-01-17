@@ -1,0 +1,26 @@
+.contact
+    background: linear-gradient($black 50%, $yellow 50.1%)
+    form
+        max-width: 70rem
+        margin: 0 auto
+        background-color: $white
+        border: $border
+        padding: 2rem
+        .box
+            width: 100%
+            margin: .7rem 0
+            padding: 1.2rem 1.4rem
+            text-transform: none
+            font-size: 2rem
+            border: $border
+            &:focus
+                background-color: $black
+                color: $white
+                &::placeholder
+                    color: $white
+            &::placeholder
+                color: $black
+                text-transform: capitalize
+        textarea
+            height: 20rem
+            resize: none

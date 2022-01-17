@@ -1,0 +1,45 @@
+.projects
+    background: $black
+    .box-container
+        @include grid(30rem)
+        .box
+            overflow: hidden
+            position: relative
+            &:hover
+                img
+                    padding-bottom: 0
+                .content
+                    transform: translateY(0)  /** similar as opacity:1 **/
+                    padding: 3rem 2rem
+            img  /** stabilization images **/
+                height: 40rem
+                width: 100%
+                object-fit: cover
+                padding-bottom: 8rem
+                transition: $transition
+            .content
+                position: absolute
+                bottom: 0
+                left: 0
+                height: 100%
+                width: 100%
+                background: $white
+                text-align: center
+                padding: 1.5rem 1rem
+                text-align: center
+                transition: $transition
+                transform: translateY(calc(100% - 8.5rem)) /** similar as opacity:0 **/
+                i 
+                    height: 6rem
+                    width: 6rem
+                    line-height: 5.7rem
+                    border-radius: 50%
+                    border: $border
+                    font-size: 2rem 
+                    margin-bottom: 5rem
+                h3
+                    font-size: 2rem
+                p
+                    padding: 1rem 0
+                    font-size: 1.5rem
+                    line-height: 2 

@@ -1,0 +1,50 @@
+.home
+    margin-top: 8rem
+    position: relative
+    padding-bottom: 35rem
+    h3
+        text-align: center
+        font-size: 5vw
+        text-transform: uppercase
+    &-text 
+        -webkit-text-stroke: .2rem $black
+        color: $white
+        position: relative
+        z-index: 10
+        &:hover
+            text-shadow: $box-shadow
+    &-img
+        position: absolute
+        top: 0
+        left: 0
+        transform: translate(-50%, -70%) scale(0)
+        transition:  .2s liner
+        pointer-events: none
+        height: 40rem
+        width: 40rem
+        object-fit: cover
+    .wave
+        position: absolute
+        bottom: 0
+        left: 0
+        height: 30rem
+        width: 100%
+        background: url(../img/wave.png) repeat-x
+        background-size: 250rem 30rem
+        animation: wave 10s linear infinite 
+        &-2
+            opacity: .5
+            animation-delay: .2s
+            animation-direction: reverse
+        &-3
+            opacity: .7
+            animation-duration: 5s
+@keyframes wave
+    0%
+        background-position-x: 0
+    0%
+        background-position-x: -250rem
+        
+        /** dont work **/
+.home .home-titletext:hover > .home-img
+    transform: translate(-50%, -70%) scale(1)
